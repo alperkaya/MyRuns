@@ -41,7 +41,8 @@ public class MainActivity extends Activity {
         ivProfilePhoto = (ImageView) findViewById(R.id.ivProfilePhoto);
 
         if (savedInstanceState != null) {
-            mImageCaptureUri = savedInstanceState.getParcelable(URI_INSTANCE_STATE_KEY);
+            mImageCaptureUri = savedInstanceState
+                    .getParcelable(URI_INSTANCE_STATE_KEY);
         }
 
         loadProfilePhoto();
@@ -73,8 +74,8 @@ public class MainActivity extends Activity {
                 // Set the picture image in UI
                 if (extras != null) {
                     //get the cropped bitmap
-                    Bitmap thePic = extras.getParcelable("data");
-                    ivProfilePhoto.setImageBitmap(thePic);
+                    ivProfilePhoto
+                            .setImageBitmap((Bitmap) extras.getParcelable("data"));
                     saveProfilePhoto();
                 }
 
@@ -140,10 +141,8 @@ public class MainActivity extends Activity {
     private void cropImage() {
         // Use existing crop activity.
         Intent intent = new Intent("com.android.camera.action.CROP");
-        //indicate image type and Uri
         intent.setDataAndType(mImageCaptureUri, IMAGE_UNSPECIFIED);
-        // set crop properties
-        intent.putExtra("crop", "true");
+
         // Specify image size
         intent.putExtra("outputX", 100);
         intent.putExtra("outputY", 100);
