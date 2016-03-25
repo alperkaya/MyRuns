@@ -17,6 +17,7 @@ public class MyRunsDialogFragment extends DialogFragment {
 
     // For photo picker selection:
     public static final int ID_PHOTO_PICKER_FROM_CAMERA = 0;
+    public static final int ID_PHOTO_PICKER_FROM_GALLERY = 1;
 
     private static final String DIALOG_ID_KEY = "dialog_id";
 

@@ -129,6 +129,10 @@ public class MainActivity extends Activity {
                 }
                 break;
 
+            case MyRunsDialogFragment.ID_PHOTO_PICKER_FROM_GALLERY:
+
+                break;
+
             default:
                 return;
         }

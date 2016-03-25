@@ -19,7 +19,8 @@
     <string name="profile_photo_file_name">profile_photo.png</string>
 
     <string-array name="ui_profile_photo_picker_items">
-        <item>Take picture from camera</item>
+        <item>Take from camera</item>
+        <item>Select from gallery</item>
     </string-array>
 
 </resources>
