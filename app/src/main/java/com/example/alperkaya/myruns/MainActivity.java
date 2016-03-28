@@ -7,13 +7,14 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -22,16 +23,14 @@ import java.io.IOException;
 
 public class MainActivity extends Activity {
 
+    private static final int REQUEST_CODE_TAKE_FROM_CAMERA = 213;
+    private static final int REQUEST_CODE_CROP_PHOTO = 214;
+    private static final int REQUEST_CODE_TAKE_FROM_GALLERY = 215;
+    private static final String IMAGE_UNSPECIFIED = "image/*";
+    private static final String URI_INSTANCE_STATE_KEY = "saved_uri";
     private ImageView ivProfilePhoto;
     private Uri mImageCaptureUri;
     private boolean isTakenFromCamera;
-
-    private static final int REQUEST_CODE_TAKE_FROM_CAMERA = 213;
-    private static final int REQUEST_CODE_CROP_PHOTO = 214;
-
-    private static final String IMAGE_UNSPECIFIED = "image/*";
-    private static final String URI_INSTANCE_STATE_KEY = "saved_uri";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +87,15 @@ public class MainActivity extends Activity {
 
                 break;
 
+            case REQUEST_CODE_TAKE_FROM_GALLERY:
+                mImageCaptureUri = data.getData();
+                // Send image taken from gallery for cropping
+                cropImage();
+                break;
+
+
         }
+
     }
 
     // ****************** button click callback ***************************//
@@ -105,16 +112,16 @@ public class MainActivity extends Activity {
     }
 
     public void onPhotoPickerItemSelected(int item) {
+        // Construct temporary image path and name to save the taken
+        // photo
+        mImageCaptureUri = Uri.fromFile(new File(Environment
+                .getExternalStorageDirectory(), "tmp_profile_photo.jpg"));
         switch (item) {
             case MyRunsDialogFragment.ID_PHOTO_PICKER_FROM_CAMERA:
                 // Take photo from camera
                 // Construct an intent with action
                 // MediaStore.ACTION_IMAGE_CAPTURE
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                // Construct temporary image path and name to save the taken
-                // photo
-                mImageCaptureUri = Uri.fromFile(new File(Environment
-                        .getExternalStorageDirectory(), "tmp_profile_photo.jpg"));
                 intent.putExtra(MediaStore.EXTRA_OUTPUT,
                         mImageCaptureUri);
                 intent.putExtra("return-data", true);
@@ -130,7 +137,12 @@ public class MainActivity extends Activity {
                 break;
 
             case MyRunsDialogFragment.ID_PHOTO_PICKER_FROM_GALLERY:
+                Intent galleryIntent = new Intent(Intent.ACTION_PICK,
+                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                galleryIntent.putExtra(MediaStore.EXTRA_OUTPUT, mImageCaptureUri);
+                galleryIntent.putExtra("return-data", true);
 
+                startActivityForResult(galleryIntent, REQUEST_CODE_TAKE_FROM_GALLERY);
                 break;
 
             default:
