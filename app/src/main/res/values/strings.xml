@@ -26,8 +26,26 @@
     <string name="start">START</string>
     <string name="history">HISTORY</string>
     <string name="settings">SETTINGS</string>
+    <string name="sync">SYNC</string>
+
 
     <string name="title_activity_main">MainActivity</string>
+
+    <string name="input_type">Input Type</string>
+    <string-array name="input_type_items">
+        <item>Manual Entry</item>
+        <item>GPS</item>
+        <item>Automatic</item>
+    </string-array>
+    <string name="activity_type">Activity Type</string>
+    <string-array name="activity_type_items">
+        <item>Running</item>
+        <item>Walking</item>
+        <item>Standing</item>
+        <item>Cycling</item>
+        <item>Hiking</item>
+        <item>Downhill Skiing</item>
+    </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
