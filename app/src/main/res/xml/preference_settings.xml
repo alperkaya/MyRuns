@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Account Preferences">
+
+        <CheckBoxPreference
+            android:key="checkBoxPref"
+            android:summary="Posting your records anonymously"
+            android:title="Privacy Settings" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="ADDITIONAL SETTINGS">
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="MISC."></PreferenceCategory>
+
+</PreferenceScreen>
