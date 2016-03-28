@@ -7,9 +7,6 @@ import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 
-/**
- * Created by alper.kaya on 17.03.2016.
- */
 public class MyRunsDialogFragment extends DialogFragment {
     // Different dialog IDs
     public static final int DIALOG_ID_ERROR = -1;
@@ -55,8 +52,8 @@ public class MyRunsDialogFragment extends DialogFragment {
                     public void onClick(DialogInterface dialog, int which) {
                         // Item is ID_PHOTO_PICKER_FROM_CAMERA
                         // Call the onPhotoPickerItemSelected in the parent
-                        // activity, i.e., MainActivity in this case
-                        ((MainActivity) parent)
+                        // activity, i.e., ProfileActivity in this case
+                        ((ProfileActivity) parent)
                                 .onPhotoPickerItemSelected(which);
                     }
                 };
