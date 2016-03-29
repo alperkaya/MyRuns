@@ -47,6 +47,16 @@
         <item>Downhill Skiing</item>
     </string-array>
 
+    <string-array name="unit_preference_items">
+        <item>Metric (Kilometers)</item>
+        <item>Imperial (Miles)</item>
+    </string-array>
+
+    <string-array name="unit_preference_item_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
 
 </resources>
 
