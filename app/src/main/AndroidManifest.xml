@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.alperkaya.myruns" >
+    package="com.example.alperkaya.myruns">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -8,7 +8,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".ProfileActivity"
             android:label="@string/app_name" />
@@ -23,8 +23,15 @@
         </activity>
         <activity
             android:name=".ManualEntryActivity"
-            android:label="@string/title_activity_start">
-        </activity>
+            android:label="@string/title_activity_start" />
+        <activity
+            android:name=".GPSActivity"
+            android:label="@string/title_activity_gps"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".AutomaticActivity"
+            android:label="@string/title_activity_automatic"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

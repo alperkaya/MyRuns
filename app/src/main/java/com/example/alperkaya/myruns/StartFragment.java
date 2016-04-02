@@ -3,10 +3,12 @@ package com.example.alperkaya.myruns;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Spinner;
 
 
 /**
@@ -22,6 +24,7 @@ public class StartFragment extends Fragment implements View.OnClickListener {
 
     private static final int REQUEST_CODE_START = 766;
 
+    private Spinner inputSpinner;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -64,6 +67,7 @@ public class StartFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_start, container, false);
         Button mStartBtn = (Button) v.findViewById(R.id.btnStart);
+        inputSpinner = (Spinner) v.findViewById(R.id.inputSpinner);
 
         mStartBtn.setOnClickListener(this);
 
@@ -79,8 +83,23 @@ public class StartFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnStart:
-                Intent mStartIntent = new Intent(getContext(), ManualEntryActivity.class);
-                startActivityForResult(mStartIntent, REQUEST_CODE_START);
+                String inputTypes[] = getResources().getStringArray(R.array.input_type_items);
+                String selectedSpinnerItem = inputSpinner.getSelectedItem().toString();
+                if (inputTypes[0].equals(selectedSpinnerItem)) {
+                    Log.d("alper", "0");
+                    Intent mManualEntryIntent = new Intent(getContext(), ManualEntryActivity.class);
+                    startActivity(mManualEntryIntent);
+                } else if (inputTypes[1].equals(selectedSpinnerItem)) {
+                    Log.d("alper", "1");
+                    Intent mGPSIntent = new Intent(getContext(), GPSActivity.class);
+                    startActivity(mGPSIntent);
+                } else if (inputTypes[2].equals(selectedSpinnerItem)) {
+                    Log.d("alper", "2");
+                    Intent mAutoIntent = new Intent(getContext(), AutomaticActivity.class);
+                    startActivity(mAutoIntent);
+                }
+
+
                 break;
         }
     }

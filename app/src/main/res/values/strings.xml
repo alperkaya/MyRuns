@@ -71,6 +71,8 @@
         <item>2</item>
     </string-array>
     <string name="title_activity_start">StartActivity</string>
+    <string name="title_activity_gps">GPSActivity</string>
+    <string name="title_activity_automatic">AutomaticActivity</string>
 
 
 </resources>
