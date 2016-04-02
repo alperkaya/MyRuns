@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Account Preferences">
+
+        <Preference
+            android:key="userProfile"
+            android:summary="User Profile"
+            android:title="Name, Email, Class, etc">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetClass="com.example.alperkaya.myruns.ProfileActivity"
+                android:targetPackage="com.example.alperkaya.myruns" />
+
+        </Preference>
+
+        <CheckBoxPreference
+            android:key="checkBoxPref"
+            android:summary="Posting your records anonymously"
+            android:title="Privacy Settings" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="ADDITIONAL SETTINGS">
+
+        <ListPreference
+            android:dialogTitle="Unit Preference"
+            android:entries="@array/unit_preference_items"
+            android:entryValues="@array/unit_preference_item_values"
+            android:key="unitPref"
+            android:summary="Select the units"
+            android:title="Unit Preference" />
+
+        <EditTextPreference
+            android:key="comments"
+            android:summary="Please enter your comments"
+            android:title="Comments" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="MISC.">
+        <Preference
+            android:key="webpage"
+            android:summary="www.google.com"
+            android:title="Webpage">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://www.google.com" />
+        </Preference>
+
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
