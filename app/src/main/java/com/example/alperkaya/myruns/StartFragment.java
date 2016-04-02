@@ -79,9 +79,10 @@ public class StartFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnStart:
-                Intent mStartIntent = new Intent(getContext(), StartActivity.class);
+                Intent mStartIntent = new Intent(getContext(), ManualEntryActivity.class);
                 startActivityForResult(mStartIntent, REQUEST_CODE_START);
                 break;
         }
     }
+
 }

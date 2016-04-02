@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".StartActivity"
+            android:name=".ManualEntryActivity"
             android:label="@string/title_activity_start">
         </activity>
     </application>

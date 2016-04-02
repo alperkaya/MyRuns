@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.alperkaya.myruns.StartActivity">
+    tools:context=".ManualEntryActivity">
 
 
     <ListView
@@ -18,17 +18,19 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/saveButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="onSaveButtonClicked"
             android:text="@string/save" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/cancelButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="onCancelButtonClicked"
             android:text="@string/cancel" />
     </LinearLayout>
 </LinearLayout>

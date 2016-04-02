@@ -14,8 +14,22 @@
     <string name="change">Change</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
+    <string name="ok">Ok</string>
+    <string name="hint">How did it go? Notes here.</string>
+
     <string name="dialog_fragment_tag_photo_picker">Photo Picker TAG</string>
+    <string name="dialog_fragment_tag_duration">Duration TAG</string>
+    <string name="dialog_fragment_tag_distance">Distance TAG</string>
+    <string name="dialog_fragment_tag_calories">Calories TAG</string>
+    <string name="dialog_fragment_tag_heart_rate">Heart Rate TAG</string>
+    <string name="dialog_fragment_tag_comment">Comment TAG</string>
+
     <string name="ui_profile_photo_picker_title">Photo Picker</string>
+    <string name="ui_manual_entry_duration_title">Duration</string>
+    <string name="ui_manual_entry_distance_title">Distance</string>
+    <string name="ui_manual_entry_calories_title">Calories</string>
+    <string name="ui_manual_entry_heart_rate_title">Heart Rate</string>
+    <string name="ui_manual_entry_comment_title">Comment</string>
     <string name="profile_photo_file_name">profile_photo.png</string>
 
     <string-array name="ui_profile_photo_picker_items">
